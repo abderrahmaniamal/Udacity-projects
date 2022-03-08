@@ -148,17 +148,17 @@ def create_venue_submission():
   try:
     
     new_venue = Venue(
-      name=request.form['name'],
+      name=request.form.get['name'],
       genres=request.form.getlist('genres'),
-      address=request.form['address'],
-      city=request.form['city'],
-      state=request.form['state'],
-      phone=request.form['phone'],
-      website=request.form['website'],
-      facebook_link=request.form['facebook_link'],
-      image_link=request.form['image_link'],
-      seeking_talent=request.form['seeking_talent'],
-      description=request.form['seeking_description'],
+      address=request.form.get['address'],
+      city=request.form.get['city'],
+      state=request.form.get['state'],
+      phone=request.form.get['phone'],
+      website=request.form.get['website'],
+      facebook_link=request.form.get['facebook_link'],
+      image_link=request.form.get['image_link'],
+      seeking_talent=request.form.get['seeking_talent'],
+      description=request.form.get['seeking_description'],
     )
     #insert new venue records into the db
     Venue.insert(new_venue)
