@@ -148,17 +148,17 @@ def create_venue_submission():
   try:
     
     new_venue = Venue(
-      name=request.form.get['name'],
+      name=request.form.get('name'),
       genres=request.form.getlist('genres'),
-      address=request.form.get['address'],
-      city=request.form.get['city'],
-      state=request.form.get['state'],
-      phone=request.form.get['phone'],
-      website=request.form.get['website'],
-      facebook_link=request.form.get['facebook_link'],
-      image_link=request.form.get['image_link'],
-      seeking_talent=request.form.get['seeking_talent'],
-      description=request.form.get['seeking_description'],
+      address=request.form.get('address'),
+      city=request.form.get('city'),
+      state=request.form.get('state'),
+      phone=request.form.get('phone'),
+      website=request.form.get('website'),
+      facebook_link=request.form.get('facebook_link'),
+      image_link=request.form.get('image_link'),
+      seeking_talent=request.form.get('seeking_talent'),
+      description=request.form.get('seeking_description'),
     )
     #insert new venue records into the db
     Venue.insert(new_venue)
@@ -367,14 +367,14 @@ def create_artist_submission():
     if 'seeking_description' in request.form:
       seeking_description = request.form['seeking_description']
     new_artist = Artist(
-      name=request.form['name'],
-      genres=request.form['genres'],
-      city=request.form['city'],
-      state= request.form['state'],
-      phone=request.form['phone'],
-      website=request.form['website'],
-      image_link=request.form['image_link'],
-      facebook_link=request.form['facebook_link'],
+      name=request.form.get('name'),
+      genres=request.form.get('genres'),
+      city=request.form.get('city'),
+      state= request.form.get('state'),
+      phone=request.form.get('phone'),
+      website=request.form.get('website'),
+      image_link=request.form.get('image_link'),
+      facebook_link=request.form.get('facebook_link'),
       seeking_venue=seeking_venue,
       seeking_description=seeking_description,
     )
